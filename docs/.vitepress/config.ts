@@ -29,7 +29,6 @@ export default defineConfig({
           text: '进阶',
           items: [
             { text: '实例方法 / 事件 / 插槽', link: '/guide/instance' },
-            { text: '从旧组件迁移', link: '/guide/migration' },
             { text: '常见问题', link: '/guide/faq' }
           ]
         }

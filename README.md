@@ -1,12 +1,14 @@
 # vue-el-protable
 
+📖 在线文档：https://eternalnone.github.io/vue-el-protable/
+
 基于 Element Plus 的配置驱动表格组件：**一份 `columns` 配置，同时生成筛选表单 + 表格 + 分页 + 数据请求**。
 
 - 零运行时依赖，仅 peer 依赖 `vue >= 3.5` 与 `element-plus >= 2.9`
 - ESM 单产物 + 完整 TypeScript 类型（`vue-tsc` 全量推导）
 - 响应结构自动识别（`{records, total}` / 纯数组 / `{data: {list, count}}` 多层包装均可）
 - 筛选表单响应式：默认收起一行、查询/重置按钮始终可见，支持展开/收起
-- 内置工具栏：刷新、密度切换、列设置（显隐 + 排序重置）、全屏
+- 内置工具栏：刷新、列设置（显隐 + 排序重置）、全屏
 - 字段联动（父级变化自动清空/禁用/重载子级）与远程搜索（防抖）
 - 8 类插槽 + 9 个实例方法 + `v-model:query` / `v-model:selection`
 
@@ -207,7 +209,7 @@ tests/                 # 单元测试与类型测试
 
 ## 文档
 
-完整 API、列配置参考、联动与远程搜索指南、迁移与 FAQ：
+完整 API、列配置参考、联动与远程搜索指南、FAQ（在线版见顶部链接），本地运行：
 
 ```bash
 npm run docs:dev
