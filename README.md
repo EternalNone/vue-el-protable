@@ -116,7 +116,7 @@ const options = {
   pageSize: 10,
   selection: 'multiple',// 'multiple' | 'single' | false
   selectionKey: 'id',   // 跨页保留勾选的行标识
-  toolbar: true,        // 工具栏：刷新/密度/列设置/全屏
+  toolbar: true,        // 工具栏：刷新/列设置/全屏
   searchCollapsed: true,// 筛选表单默认收起一行
   beforeFetch,          // (params) => params | false（false 取消请求）
   afterFetch,           // (rows) => rows 数据加工
@@ -206,6 +206,21 @@ playground/            # 可运行示例（基础/联动/选择/插槽 四个场
 docs/                  # VitePress 文档站源码
 tests/                 # 单元测试与类型测试
 ```
+
+## 发布新版本
+
+npm 包由 GitHub Actions 自动发布（`.github/workflows/publish-npm.yml`）：推送 `v*` 格式的 git tag 后，自动执行类型检查 → 单元测试 → 构建 → 发布到 npm。仅推送代码到 main 不会发包（同一版本号在 npm 只能发布一次，打 tag 即代表一次正式发版）。
+
+发新版只需两条命令：
+
+```bash
+npm version patch      # 升版本号并自动打 tag（补丁用 patch，新功能用 minor，破坏性变更用 major）
+git push --follow-tags # 推送代码与 tag，tag 到达 GitHub 后自动触发发布
+```
+
+前置条件（一次性配置）：仓库 `Settings → Secrets and variables → Actions` 中需存在名为 `NPM_TOKEN` 的 secret，值为 npm 的 Granular Access Token（勾选 Bypass 2FA，Packages 权限 Read and write）。
+
+发布后可在仓库 Actions 页面查看 "Publish to npm" 运行结果，并用 `npm view vue-el-protable version` 确认新版本已上线。
 
 ## 文档
 
