@@ -1,0 +1,131 @@
+/* vue-el-protable 组件样式：全部走 Element Plus CSS 变量，自动适配明暗主题 */
+/* 类名统一 cpt- 前缀；纯 CSS，无预处理器、无 @import */
+
+/* ---------- 根容器 ---------- */
+.cpt-protable {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  font-family: inherit;
+  color: var(--el-text-color-primary);
+}
+
+/* ---------- 筛选表单区（卡片化，与表格保持间距） ---------- */
+.cpt-search {
+  padding: 18px 16px 2px;
+  margin-bottom: 16px;
+  background-color: var(--el-bg-color);
+  border: 1px solid var(--el-border-color-lighter);
+  border-radius: var(--el-border-radius-base);
+}
+
+/* 按钮区：整行右对齐，始终可见 */
+.cpt-search__actions .el-form-item__content {
+  justify-content: flex-end;
+  flex-wrap: nowrap;
+}
+
+/* 展开 / 收起按钮 */
+.cpt-search__collapse-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  margin-left: 8px;
+  color: var(--el-color-primary);
+}
+.cpt-search__collapse-btn svg {
+  transition: transform var(--el-transition-duration);
+}
+
+/* ---------- 工具栏（flex 两端布局） ---------- */
+.cpt-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.cpt-toolbar__left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.cpt-toolbar__right {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* 工具栏图标按钮（刷新 / 密度 / 列设置 / 全屏共用） */
+.cpt-toolbar__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: none;
+  border-radius: var(--el-border-radius-base);
+  background-color: transparent;
+  color: var(--el-text-color-regular);
+  cursor: pointer;
+  transition:
+    color var(--el-transition-duration),
+    background-color var(--el-transition-duration);
+}
+.cpt-toolbar__btn:hover {
+  color: var(--el-color-primary);
+  background-color: var(--el-fill-color-light);
+}
+.cpt-toolbar__btn:active {
+  color: var(--el-color-primary-active);
+}
+
+/* ---------- 表格区 ---------- */
+.cpt-protable__table {
+  width: 100%;
+}
+
+/* 表头背景：区分表头与数据行（沿用 Element Plus 变量，自动适配暗色主题） */
+.cpt-protable__table th.el-table__cell {
+  background-color: var(--el-fill-color-light);
+}
+
+/* ---------- 分页区（右对齐，上下间距） ---------- */
+.cpt-protable__pagination {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 16px;
+}
+
+/* ---------- 全屏状态（原生 Fullscreen API 拒绝授权时的 CSS 兜底） ---------- */
+.cpt-protable.is-fullscreen {
+  position: fixed;
+  inset: 0;
+  z-index: 2100;
+  padding: 16px;
+  overflow: auto;
+  background-color: var(--el-bg-color);
+}
+.cpt-protable.is-fullscreen .cpt-protable__table {
+  flex: 1;
+  min-height: 0;
+}
+
+/* ---------- 列设置弹层（teleport 到 body，需全局选择器） ---------- */
+.cpt-column-setting-popper .cpt-column-setting__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 8px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid var(--el-border-color-lighter);
+}
+.cpt-column-setting-popper .cpt-column-setting__list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  max-height: 280px;
+  overflow-y: auto;
+}
