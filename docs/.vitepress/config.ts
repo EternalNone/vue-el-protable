@@ -2,6 +2,8 @@ import { defineConfig } from 'vitepress'
 
 export default defineConfig({
   lang: 'zh-CN',
+  // GitHub Pages 部署在仓库名子路径下（本地预览同样需带该前缀）
+  base: '/vue-el-protable/',
   title: 'vue-el-protable',
   description: '基于 Vue 3 + Element Plus 的配置驱动式中后台智能表格组件',
   themeConfig: {
