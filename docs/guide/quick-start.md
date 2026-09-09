@@ -12,7 +12,7 @@
 npm install vue-el-protable
 ```
 
-依赖 `vue >= 3` 与 `element-plus`，请确保项目中已安装并按需或全量引入 Element Plus。
+peer 依赖 `vue >= 3.5` 与 `element-plus >= 2.9`，请确保项目中已安装并按需或全量引入 Element Plus。
 
 ## 注册
 
@@ -101,7 +101,7 @@ export async function getUserPageApi(params: any) {
 | 筛选区 | 显示 | 超过 4 项时初始收起为一行（`collapsedSize` / `searchCollapsed`） |
 | 回车查询 | 开启 | `options.searchOnEnter` |
 | 查询 / 重置按钮 | 显示 | `options.showSearchButtons` |
-| 工具栏 | 刷新、密度、列设置、全屏 | `options.toolbarConfig` 逐项开关 |
+| 工具栏 | 刷新、列设置、全屏 | `options.toolbarConfig` 逐项开关 |
 | 响应结构 | 自动识别 | 见 [常见问题：响应字段识别规则](./faq.md) |
 
 ## 本地 playground

@@ -36,7 +36,7 @@ const tableRef = ref<ProTableInstance>()
 | v-model | 说明 |
 | --- | --- |
 | `v-model:query` | 查询条件对象，与筛选区双向同步 |
-| `v-model:selection` | 选中行（多选为数组；单选为行对象或 `null`） |
+| `v-model:selection` | 选中行数组（多选为多行；单选长度 ≤ 1） |
 
 ## 事件
 
@@ -57,12 +57,13 @@ const tableRef = ref<ProTableInstance>()
 
 | 插槽 | 作用域 | 说明 |
 | --- | --- | --- |
-| `#toolbar` | - | 工具栏左侧：自定义业务按钮（新增/删除/导出等）统一放在这里 |
+| `#toolbar` | - | 工具栏左侧：自定义业务按钮（新增/删除/导出等）统一放在这里，右侧为固定内置功能（刷新/列设置/全屏） |
 | `#{prop}` | `{ row, column, $index }` | 单元格插槽；列配置 `slot: true`（或 `slot: '名称'`） |
-| `#{prop}-header` | - | 表头插槽；列配置 `headerSlot: true`（或 `headerSlot: '名称'`） |
-| `#expand` | `{ row }` | 展开行内容；需 `options.showExpand: true` |
-| `#search-{key}` | `{ query }` | 自定义筛选项；列配置 `search: { type: 'custom', key }`，作用域 `query` 可直接 `v-model` |
-| `#search-actions` | - | 筛选按钮区，可追加自定义按钮 |
+| `#{prop}-header` | `{ column, $index }` | 表头插槽；列配置 `headerSlot: true`（或 `headerSlot: '名称'`） |
+| `#expand` | `{ row, $index }` | 展开行内容；需 `options.showExpand: true` |
+| `#empty` | - | 空数据占位 |
+| `#search-{key}` | `{ value, query, item, setValue }` | 自定义筛选项；列配置 `search: { type: 'custom', key }`，`{key}` 为 `search.key ?? prop`；可对 `query` 直接 `v-model`，或用 `setValue(val)` 写入并触发联动逻辑 |
+| `#search-actions` | `{ query }` | 筛选按钮区追加内容（查询/重置按钮之后） |
 
 示例：
 

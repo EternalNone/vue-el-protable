@@ -107,7 +107,7 @@
 
 ### 自定义筛选项（custom）
 
-`type: 'custom'` 时，该项由 `search-{key}` 插槽渲染，插槽作用域提供 `query`，可直接 `v-model` 写入：
+`type: 'custom'` 时，该项由 `search-{key}` 插槽渲染（`{key}` 为 `search.key ?? prop`），插槽作用域为 `{ value, query, item, setValue }`：可对 `query` 直接 `v-model` 写入，也可用 `setValue(val)` 写入并触发值变化联动逻辑：
 
 ```ts
 {

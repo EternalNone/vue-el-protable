@@ -11,7 +11,7 @@
 | `width` | `string \| number` | - | 列宽 |
 | `minWidth` | `string \| number` | - | 最小列宽 |
 | `fixed` | `boolean \| 'left' \| 'right'` | - | 固定列 |
-| `align` | `'left' \| 'center' \| 'right'` | `'left'` | 内容对齐 |
+| `align` | `'left' \| 'center' \| 'right'` | `'center'` | 内容对齐 |
 | `headerAlign` | `'left' \| 'center' \| 'right'` | - | 表头对齐 |
 | `sortable` | `boolean \| 'custom'` | - | 排序；`'custom'` 时触发服务端排序，请求自动携带 `sortProp` / `sortOrder` |
 | `formatter` | `(row, column, cellValue, index) => any` | - | 轻量格式化（纯文本场景） |

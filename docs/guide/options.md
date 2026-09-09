@@ -21,8 +21,8 @@
 | `searchVisible` | `boolean` | `true` | 显示筛选区 |
 | `searchCollapsed` | `boolean` | `true` | 筛选区初始收起为一行（筛选项超过 `collapsedSize` 时生效） |
 | `collapsedSize` | `number` | `4` | 收起阈值：筛选项数量超过该值出现展开/收起 |
-| `labelWidth` | `string \| number` | - | 筛选表单 label 宽度 |
-| `labelPosition` | `'left' \| 'right' \| 'top'` | - | 筛选表单 label 位置 |
+| `labelWidth` | `string \| number` | `'auto'` | 筛选表单 label 宽度 |
+| `labelPosition` | `'left' \| 'right' \| 'top'` | `'right'` | 筛选表单 label 位置 |
 | `searchOnEnter` | `boolean` | `true` | 回车触发查询 |
 | `showSearchButtons` | `boolean` | `true` | 显示查询/重置按钮 |
 | `toolbarConfig` | `ProTableToolbarConfig` | 全部开启 | 工具栏内置功能开关，见下 |
