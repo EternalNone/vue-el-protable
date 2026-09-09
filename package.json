@@ -11,6 +11,14 @@
   ],
   "type": "module",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EternalNone/vue-el-protable.git"
+  },
+  "homepage": "https://github.com/EternalNone/vue-el-protable#readme",
+  "bugs": {
+    "url": "https://github.com/EternalNone/vue-el-protable/issues"
+  },
   "main": "./dist/index.es.js",
   "module": "./dist/index.es.js",
   "types": "./dist/index.d.ts",
